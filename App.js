@@ -1,20 +1,15 @@
-import React, {useState} from 'react';
-import {View, Text, StatusBar, useColorScheme, StyleSheet} from 'react-native';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
-import HomeScreen from './src/screens/HomeScreen';
-import ProductScreen from './src/screens/HomeScreen/ProductScreen';
+import React from 'react';
+import {StyleSheet, View} from 'react-native';
+import ProductScreen from './src/screens/ProductScreen/ProductScreen';
+import HomeScreen from './src/screens/ShopingCartScreen/ShopingCartScreen';
+import ShopingCartScreen from './src/screens/ShopingCartScreen/ShopingCartScreen';
 
 const App = () => {
-  // const isDarkMode = useColorScheme () =>'dark';
-
-  // const backgroundStyle = {
-  //   backgroundColor: isDarkMode ? Colors.darker: Colors.lighter,
-  // };
-
   return (
     <View style={StyleSheet.frontPage}>
-      {/* <HomeScreen /> */}
+      <HomeScreen />
       <ProductScreen />
+      <ShopingCartScreen />
     </View>
   );
 };

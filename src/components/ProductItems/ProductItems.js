@@ -1,20 +1,10 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {Image, Text, View} from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import styles from '../../components/styles';
+import styles from './ProductItems.styles';
 
-interface ProductItemProps {
-  item: {
-    id: string,
-    title: string,
-    image: string,
-    avgRating: number,
-    ratings: number,
-    price: number,
-  };
-}
-
-const ProductItem = ({item}: ProductItemProps) => {
+const ProductItem = props => {
+  const {item} = props;
   return (
     <View style={styles.root}>
       <Image

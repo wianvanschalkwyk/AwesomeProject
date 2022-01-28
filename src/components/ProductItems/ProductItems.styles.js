@@ -1,15 +1,13 @@
-
 import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
-    
   root: {
     flexDirection: 'row',
     borderWidth: 1,
     borderColor: 'grey',
     borderRadius: 10,
     backgroundColor: '#dcdedc',
-    marginVertical:5,
+    marginVertical: 5,
   },
 
   image: {
@@ -31,8 +29,7 @@ const styles = StyleSheet.create({
     padding: 10,
     flex: 3,
   },
- 
-  
+
   ratingsContainer: {
     flexDirection: 'row',
     marginVertical: 5,
