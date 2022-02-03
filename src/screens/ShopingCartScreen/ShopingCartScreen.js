@@ -1,10 +1,10 @@
 import React from 'react';
+import {useNavigation} from '@react-navigation/native';
 import {FlatList, StyleSheet, View, Text} from 'react-native';
 import Button from '../../components/Button/Button';
 import CartProductItem from '../../components/CartProductItems/CartProductItems';
 
 import products from '../../data/cart';
-
 
 const ShopingCartScreen = () => {
   const totalPrice = products.reduce(
@@ -12,13 +12,18 @@ const ShopingCartScreen = () => {
       summedPrice + product.item.price * product.item.quantity,
     0,
   );
+
+  const navigation = useNavigation();
   return (
     <View style={styles.page}>
       <View>
         <Text>
           Subtotal ({products.length} items):R{totalPrice}
         </Text>
-        <Button text='Proceed to checkout' onPress={()=> console.warn('Go to checkout')} />
+        <Button
+          text={'Proceed to checkout'}
+          onPress={() => navigation.navigate('NewClientScreen', {})}
+        />
       </View>
 
       <FlatList

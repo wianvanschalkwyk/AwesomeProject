@@ -1,12 +1,12 @@
 import React from 'react';
-import {Image, Text, View} from 'react-native';
+import {Image, Text, View, TouchableOpacity} from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import styles from './ProductItems.styles';
 
 const ProductItem = props => {
-  const {item} = props;
+  const {item, onPress} = props;
   return (
-    <View style={styles.root}>
+    <TouchableOpacity onPress={onPress} style={styles.root}>
       <Image
         style={styles.image}
         source={{
@@ -29,7 +29,7 @@ const ProductItem = props => {
         </View>
         <Text style={styles.price}>R{item.price}</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 export default ProductItem;

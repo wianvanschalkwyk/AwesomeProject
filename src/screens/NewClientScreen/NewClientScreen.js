@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text, TextInput, Alert} from 'react-native';
+import {View, Text, TextInput, Alert,ScrollView} from 'react-native';
 import {Picker} from '@react-native-picker/picker';
 import styles from './NewClientScreen.styles';
 import countryList, {countries} from 'countries-list';
@@ -13,6 +13,7 @@ const NewClientScreen = () => {
   const [address, setAddress] = useState('');
   const [city, setCity] = useState('');
   const onCheckout = () => {
+
     if (!fullname) {
       Alert.alert('please complete field');
       return;
@@ -20,7 +21,7 @@ const NewClientScreen = () => {
     console.warn('Please complete');
   };
   return (
-    <View style={styles.root}>
+    <ScrollView style={styles.root}>
       <View style={styles.row}>
         <Picker
           style={{height: 80, width: '100%', fontSize: 80}}
@@ -69,7 +70,7 @@ const NewClientScreen = () => {
         />
       </View>
       <Button text="checkout" onPress={onCheckout} />
-    </View>
+    </ScrollView>
   );
 };
 

@@ -1,18 +1,16 @@
-import React from 'react';
-import {StyleSheet, View} from 'react-native';
-import ProductScreen from './src/screens/ProductScreen/ProductScreen';
-import HomeScreen from './src/screens/HomeScreen/HomeScreen';
-import ShopingCartScreen from './src/screens/ShopingCartScreen/ShopingCartScreen';
-import NewClientScreen from './src/screens/NewClientScreen/NewClientScreen';
+import {GraphQLClient, ClientContext} from 'graphql-hooks';
+import * as React from 'react';
+import Route from './src/screens/Routes/Route';
+
+const client = new GraphQLClient({
+  url: 'https://eu1.prisma.sh/frikan-erwee/ov-assesment-shop-prisma/dev',
+});
 
 const App = () => {
   return (
-    <View style={StyleSheet.frontPage}>
-      {/* <HomeScreen /> */}
-      {/* <ProductScreen /> */}
-      {/* <ShopingCartScreen /> */}
-      <NewClientScreen />
-    </View>
+    <ClientContext.Provider value={client}>
+      <Route />
+    </ClientContext.Provider>
   );
 };
 
